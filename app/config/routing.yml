@@ -1,0 +1,4 @@
+kaiim_platform:
+    resource: "@KaiimPlatformBundle/Resources/config/routing.yml"
+    prefix:   /platform
+

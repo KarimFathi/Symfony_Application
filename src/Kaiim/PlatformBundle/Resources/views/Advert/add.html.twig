@@ -1,0 +1,30 @@
+{# Template de la page de d'ajout d'annonces #}
+
+
+{# hériter du layout du bundle (src/Kaiim/PlatformBundle/Resources/views/layout.html.twig) #}
+{% extends "KaiimPlatformBundle::layout.html.twig" %}
+
+
+{% block title %}
+	Ajouter une annonce - {{ parent() }}
+{% endblock %}
+
+
+{% block ocplatform_body %}
+	
+	<h2>Ajouter une annonce</h2>
+	
+	{{ include("KaiimPlatformBundle:Advert:form.html.twig") }}
+	
+	<p>
+		Attention : cette annonce sera ajoutée directement sur la page d'accueil après validation du formulaire.
+	</p>
+	
+	<p>		
+		<a href="{{ path('kaiim_platform_home') }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			Retour à la liste
+		</a>
+	</p>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+# kaiim_platform_home : le nom de la route (routeur).
+# /platform : le chemin (url).
+# KaiimPlatformBundle : le nom du bundle.
+# Advert : le nom de la classe du controlleur.
+# index : le nom de la methode du controlleur.
+
+# RQ : l'indentation en YAML se fait avec 4 espaces par niveau, et non avec des tabulations.
+#      On peut séparer les paramètres soit avec le slash (« / »), soit avec le point (« . »).
+
+#------------------------------------ Page d'accueil ------------------------------------------------------#
+kaiim_platform_home:
+    path:      /{page}
+    defaults:  { _controller: KaiimPlatformBundle:Advert:index, page: 1 }
+    requirements:
+        page: \d*
+
+#---------------------------- Page de visualisation d'une annonce -------------------------------------------#
+kaiim_platform_view:
+    path:      /advert/{id}
+    defaults:  { _controller: KaiimPlatformBundle:Advert:view }
+    requirements:
+        id:  \d+
+
+#------------------------------- Page d'Ajout d'une annonce --------------------------------------------------#
+kaiim_platform_add:
+    path:      /add
+    defaults:  { _controller: KaiimPlatformBundle:Advert:add }
+
+#---------------------------- Page de modification d'une annonce ---------------------------------------------#
+kaiim_platform_edit:
+    path:      /edit/{id}
+    defaults:  { _controller: KaiimPlatformBundle:Advert:edit }
+    requirements:
+        id: \d+
+
+#----------------------------- Page de suppression d'une annonce ----------------------------------------------#
+kaiim_platform_delete:
+    path:      /delete/{id}
+    defaults:  { _controller: KaiimPlatformBundle:Advert:delete }
+    requirements:
+        id: \d+

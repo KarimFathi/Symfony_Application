@@ -1,0 +1,36 @@
+{# src/Kaiim/PlatformBundle/Resources/views/Advert/edit.html.twig #}
+{# Template de la page de modification #}
+
+
+{# hériter du layout du bundle (src/Kaiim/PlatformBundle/Resources/views/layout.html.twig) #}
+{% extends "KaiimPlatformBundle::layout.html.twig" %}
+
+
+{% block title %}
+	Modifier une annonce - {{ parent() }}
+{% endblock %}
+
+
+{% block ocplatform_body %}
+	
+	<h2>Modifier une annonce</h2>
+	
+	{{ include("KaiimPlatformBundle:Advert:form.html.twig") }}
+	
+	<p>
+		Vous éditez une annonce déjà existante, merci de ne pas changer	l'esprit générale de l'annonce déjà publiée.
+	</p>
+	
+	<p>
+		<a href="{{ path('kaiim_platform_view', {'id': advert.id}) }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			Retour à l'annonce
+		</a>
+		
+		<a href="{{ path('kaiim_platform_home') }}" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			Retour à la liste
+		</a>
+	</p>
+	
+{% endblock %}
